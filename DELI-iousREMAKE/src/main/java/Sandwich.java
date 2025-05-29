@@ -18,7 +18,7 @@ public class Sandwich {
         this.breadType = breadType;
         this.isToasted = isToasted;
 
-        // We create empty lists to hold toppings the user adds later
+
         this.meats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         this.toppings = new ArrayList<>();

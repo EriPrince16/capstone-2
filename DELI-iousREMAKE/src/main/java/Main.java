@@ -31,7 +31,14 @@ public class Main {
                 }
 
 
+            } else if (userInput.equals("0")) {
+                System.out.println("Thank you for visiting DELI-cious!");
+                keepGoing = false;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
             }
+
         }
+        scanner.close();
     }
 }
