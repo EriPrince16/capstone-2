@@ -51,5 +51,33 @@ public class Sandwich {
             price = 8.50;
         }
 
+        price += meats.size() * getMeatPrice();
+        price += cheeses.size() * getCheesePrice();
+
+        return price;
+    }
+
+    private double getMeatPrice() {
+        switch (size) {
+            case "4": return 1.00;
+            case "8": return 2.00;
+            case "12": return 3.00;
+            default: return 0;
+
+        }
+    }
+
+    private double getCheesePrice() {
+        switch (size) {
+            case "4": return 0.75;
+            case "8": return 1.50;
+            case "12": return 2.25;
+            default: return 0;
+
+        }
+    }
+
+    public String toString() {
+        return
     }
 }
