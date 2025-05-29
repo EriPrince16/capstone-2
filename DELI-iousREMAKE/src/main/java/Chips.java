@@ -9,4 +9,8 @@ public class Chips {
         return 1.50;
     }
 
+    public String toString(){
+        return type + "Chips - $" + String.format("%.2f", getPrice());
+    }
+
 }

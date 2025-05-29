@@ -20,4 +20,6 @@ public class Drink {
                 return 0.00;
         }
     }
+
+    public String toString() {return size + " " + flavor + " - $" + String.format("%.2f", getPrice());}
 }
