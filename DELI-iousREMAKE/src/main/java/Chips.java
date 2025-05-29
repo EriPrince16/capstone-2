@@ -4,4 +4,9 @@ public class Chips {
     public Chips(String type) {
         this.type = type;
     }
+
+    public double getPrice() {
+        return 1.50;
+    }
+
 }
