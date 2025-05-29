@@ -17,7 +17,7 @@ public class Drink {
             case "large":
                 return 3.00;
             default:
-                return 0.00;
+                System.out.println("Invalid choice! Please try again.");
         }
     }
 
