@@ -78,6 +78,13 @@ public class Sandwich {
     }
 
     public String toString() {
-        return
+        return "Size: " + size + "\"\n"
+                + "Bread: " + breadType + "\n"
+                + "Toasted: " + (isToasted ? "Yes" : "No") + "\n"
+                + "Meats: " + meats + "\n"
+                + "Cheeses: " + cheeses + "\n"
+                + "Toppings: " + toppings + "\n"
+                + "Sauces: " + sauces + "\n"
+                + "Price: $" + String.format("%.2f", calculatePrice());
     }
 }
