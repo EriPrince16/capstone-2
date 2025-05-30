@@ -4,16 +4,14 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         boolean keepGoing = true;
 
         while (keepGoing) {
-            System.out.println("Welcome to DELI-cous");
+            System.out.println("Welcome to DELI-cious");
             System.out.println("1) Create an order");
             System.out.println("0) Exit the store");
             System.out.print("Select your option: ");
             String userInput = scanner.nextLine();
-
 
             if (userInput.equals("1")) {
                 Order order = new Order();
@@ -29,9 +27,35 @@ public class Main {
                     System.out.print("Select your option: ");
                     String orderChoice = scanner.nextLine();
 
-
+                    switch (orderChoice) {
+                        case "1":
+                            Sandwich sandwich = createSandwich();
+                            order.addSandwich(sandwich);
+                            System.out.println("Sandwich added!");
+                            break;
+                        case "2":
+                            Drink drink = createDrink();
+                            order.addDrink(drink);
+                            System.out.println("Drink added!");
+                            break;
+                        case "3":
+                            Chips chips = createChips();
+                            order.addChips(chips);
+                            System.out.println("Chips added!");
+                            break;
+                        case "4":
+                            System.out.println("\nFinal Order:\n");
+                            System.out.println(order.toString());
+                            currentOrder = false; // return to home screen
+                            break;
+                        case "0":
+                            System.out.println("Order canceled.");
+                            currentOrder = false; // return to home screen
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                    }
                 }
-
 
             } else if (userInput.equals("0")) {
                 System.out.println("Thank you for visiting DELI-cious!");
@@ -39,8 +63,8 @@ public class Main {
             } else {
                 System.out.println("Invalid choice. Please try again.");
             }
-
         }
+
         scanner.close();
     }
 
@@ -57,7 +81,6 @@ public class Main {
 
         Sandwich sandwich = new Sandwich(size, bread, toasted);
 
-        // Add meats
         System.out.println("Add meats (type 'done' to stop): ");
         while (true) {
             System.out.print("Meat: ");
@@ -66,7 +89,6 @@ public class Main {
             sandwich.addMeat(meat);
         }
 
-        // Add cheeses
         System.out.println("Add cheeses (type 'done' to stop): ");
         while (true) {
             System.out.print("Cheese: ");
@@ -75,7 +97,6 @@ public class Main {
             sandwich.addCheese(cheese);
         }
 
-        // Add regular toppings
         System.out.println("Add toppings (type 'done' to stop): ");
         while (true) {
             System.out.print("Topping: ");
@@ -84,7 +105,6 @@ public class Main {
             sandwich.addTopping(topping);
         }
 
-        // Add sauces
         System.out.println("Add sauces (type 'done' to stop): ");
         while (true) {
             System.out.print("Sauce: ");
@@ -107,7 +127,7 @@ public class Main {
         return new Drink(size, flavor);
     }
 
-    // Build a chips
+    // Build chips
     public static Chips createChips() {
         System.out.print("Choose chips type (BBQ, sour cream, etc.): ");
         String type = scanner.nextLine();
